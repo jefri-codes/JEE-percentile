@@ -46,6 +46,41 @@ def get_more(percentile):
         new_percentile=99.9-percentile
         return new_percentile
 
+#Seat at IITM based on AIR
+def branch_at_iitm(air):
+    if (0<air<=171):
+        return "qualified for CSE"
+    elif (172<=air<=306):
+        return "qualified for AI and data analytics"
+    elif (307<=air<=849):
+        return "qualified for Electrical Engineering EEE"
+    elif (850<=air<=1440):
+        return"qualified for Engineering Physics"
+    elif (1441<=air<=1309):
+            return"qualified for Computational Engineering "
+    elif (1310<=air<=2468):
+            return"qualified for Mechanical engineering"
+    elif (2469<=air<=3211):
+            return"qualified for Aerospace Engineering"
+    elif (3212<=air<=3380):
+            return"qualified for Engineering Design"
+    elif (3381<=air<=4116):
+            return"qualified for chemical engineering"
+    elif (4117<=air<=4366):
+         return "qualified for Biomedical or instrumentation"
+    elif (4367<=air<=5261):
+             return "qualified for Biological Engineering"
+    elif (5262<=air<=5499):
+             return "qualified for Metalurgical or Meterials"
+    elif (5500<=air<=6112):
+             return "qualified for civil Engineering"
+    elif (6113<=air<=7433):
+             return "qualified for Naval Architecture"
+    elif (7434<=air<=3804):
+             return "qualified for BS Physics"
+    elif (3805<=air<=110290):
+             return "qualified for BS Biological science"
+
 #main part
 print("=== JEE percentile Predictor===") 
 print("can make mistakes and information based on year 2025")   
@@ -60,4 +95,11 @@ print(f"\nYour estimated percentile {per}")
 print(f"Your estimated rank:{rank}")
 print(f"college hint to join: {college}")
 print(f"the more percentile needed to secure top orr dream IIT{new_percentile}")
+choice=str(input("Are you already written JEE Advanced Yes or No")).lower()
+if (choice=="yes"):
+    air=int(input("Enter your all india rank"))
+    iitm=branch_at_iitm(air)    
+    print(f"your branch at IITM is: {iitm}")
+elif(choice=="no"):
+     print("prepare if your are qulified for JEE Advanced or work hard "  )
 print("DISCLAIMER!: this information is based on previous year data, real and accurate data will announced by NTA based on the day's shift.")
